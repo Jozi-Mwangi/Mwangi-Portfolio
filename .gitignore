@@ -1,0 +1,46 @@
+# Node.js / Frontend
+/node_modules
+
+# Python / Django
+__pycache__/
+*.pyc
+*.pyo
+
+# Database
+db.sqlite3
+*.sqlite3
+
+# Backend
+/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyo
+
+# IDE specific
+.idea/
+
+# Editor specific
+.vscode/
+
+# Logs
+*.log
+
+# Compiled files
+*.pyc
+
+# Environment Variables
+.env
+
+# Dependency directories
+**/bower_components
+**/jspm_packages
+**/node_modules
+**/out
+**/tmp
+**/vendor
+
+# Build files
+build/
+dist/
+out/
