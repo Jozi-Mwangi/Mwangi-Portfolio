@@ -23,8 +23,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", view=portfolio_data, name="frontend"),
-    path("delete/<int:pk>", view=portfolio_data, name="frontend-delete")
+    path("projects/", view=portfolio_data, name="project_data"),
+    path("projects/<int:pk>", view=portfolio_project, name="project_detail")
 ]
 
 if settings.DEBUG:
