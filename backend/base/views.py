@@ -15,7 +15,8 @@ def portfolio_data(request):
     output = [{
         "job_id": output.job_id,
         "job_title": output.job_title,
-        "job_description": output.job_description
+        "job_description": output.job_description,
+        "job_images":output.job_images
     }
         for output in WebsiteExamples.objects.all()]
 
@@ -25,12 +26,14 @@ def portfolio_data(request):
 
     if request.method == "POST":
         try:
-            serializer = WebsiteExamplesSerializer(data=output)
+            serializer = WebsiteExamplesSerializer(data=request.data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
+                print("success")
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except:
-            return Response(status=status.HTTP_417_EXPECTATION_FAILED)
+        except Exception as e:
+            print("Failed")
+            return Response({"error: ", str(e)},status=status.HTTP_417_EXPECTATION_FAILED)
 
 @api_view(["GET", "PUT", "DELETE"])
 def portfolio_project(request, pk):
